@@ -1,0 +1,30 @@
+{
+  "name": "node.js_restfulapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanewei/Node.js_RESTfulAPI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kanewei/Node.js_RESTfulAPI/issues"
+  },
+  "homepage": "https://github.com/kanewei/Node.js_RESTfulAPI#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^6.0.2",
+    "mongoose": "^5.4.20",
+    "sinon": "^7.3.1"
+  }
+}
