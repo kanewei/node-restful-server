@@ -74,7 +74,7 @@ describe('User authentication', () => {
             validator.validate.restore();
         });
 
-        it('sign up email exist', function(done){
+        it('Sign up email exist', function(done){
             const req = {
                 body: {
                     email: 'test@test.com',

@@ -28,7 +28,7 @@ describe('User create post', function(){
         })
     });
 
-    it('post invalid', function(done){
+    it('Post invalid', function(done){
         sinon.stub(validator, 'validate').returns([1]);
 
         feedController.createPost({}, {}, () => {}).then((result) => {
@@ -128,7 +128,7 @@ describe('User get update delete posts', function(){
     })
     
     describe('Update Post', function(){
-        it('update post invalid', function(done){
+        it('Update post invalid', function(done){
         
             sinon.stub(validator, 'validate').returns([1]);
     
@@ -252,7 +252,7 @@ describe('User get update delete posts', function(){
             })
         });
 
-        it('should delete post', function(done){
+        it('Should delete post', function(done){
             const req = {
                 params: {
                     postId: '5ca32b4b2f606f5cebbe57bf'
