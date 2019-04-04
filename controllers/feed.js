@@ -133,7 +133,7 @@ exports.deletePost = async (req, res, next) => {
         user.posts.pull(postId);
         await user.save();
 
-        res.status(200).json({message: 'Delete Successed', })
+        res.status(200).json({message: 'Delete Successed' })
     }catch(err){
         if(!err.statusCode)
             err.statusCode = 500;
