@@ -73,6 +73,24 @@ describe('User authentication', () => {
 
             validator.validate.restore();
         });
+
+        it('sign up email exist', function(done){
+            const req = {
+                body: {
+                    email: 'test@test.com',
+                    password: '123123',
+                    name: '' 
+                }
+            }  
+    
+            authController.signup(req, {}, () => {}).then(result => {
+                expect(result).to.be.an('error');
+                expect(result).to.have.property('statusCode', 422);
+            })
+            .then(() => {
+                done();
+            })
+        });
     })
 
     describe('User login', function(){
