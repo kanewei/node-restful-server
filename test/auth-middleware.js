@@ -10,7 +10,7 @@ describe('Auth middleware', function(){
             get: function(){
                 return null;
             }
-        }
+        };
 
         expect(authMiddleware.bind(this, req, {}, () => {})).to.throw('Not authenticated.');
     });
@@ -20,7 +20,7 @@ describe('Auth middleware', function(){
             get: function(){
                 return 'one';
             }
-        }
+        };
 
         expect(authMiddleware.bind(this, req, {}, () => {})).to.throw('Not authenticated.');
     });
@@ -30,7 +30,7 @@ describe('Auth middleware', function(){
             get: function(){
                 return 'bear one';
             }
-        }
+        };
 
         sinon.stub(jwt, 'verify').returns(null);
 
@@ -44,7 +44,7 @@ describe('Auth middleware', function(){
             get: function(){
                 return 'bear one';
             }
-        }
+        };
 
         sinon.stub(jwt, 'verify').returns({userId: 'abc'});
 

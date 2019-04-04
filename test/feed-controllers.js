@@ -92,7 +92,7 @@ describe('User get update delete posts', function(){
         })
         .then(() => {
             const post = new Post({
-                title: 'Item',
+                title: 'A Item',
                 content: 'Good item',
                 creator: '5c9a1c4e1452f12db91e1d12',
                 _id: '5ca32b4b2f606f5cebbe57bf'
@@ -124,7 +124,7 @@ describe('User get update delete posts', function(){
                 done();
             });
     
-        })
+        });
     })
     
     describe('Update Post', function(){
@@ -171,7 +171,7 @@ describe('User get update delete posts', function(){
                     postId: '5ca32b4b2f606f5cebbe57bf'
                 },
                 userId: '5c9a1c4e1452f12db9112345'
-            }
+            };
     
             feedController.updatePost(req, {}, () => {}).then((result) => {
                 expect(result).to.be.an('error');
@@ -193,7 +193,7 @@ describe('User get update delete posts', function(){
                     content: 'updateContent'
                 },
                 userId: '5c9a1c4e1452f12db91e1d12'
-            }
+            };
     
             const res = {
                 statusCode: 500,
@@ -222,7 +222,7 @@ describe('User get update delete posts', function(){
                 params: {
                     postId: '5ca32b4b2f606f5cebbe57bf'
                 }
-            }
+            };
 
             sinon.stub(Post, 'findById').returns(null);
 
@@ -241,7 +241,7 @@ describe('User get update delete posts', function(){
                     postId: '5ca32b4b2f606f5cebbe57bf'
                 },
                 userId: '5c9a1c4e1452f12db9112345'
-            }
+            };
 
             feedController.deletePost(req, {}, () => {}).then(result => {
                 expect(result).to.be.an('error');
@@ -262,7 +262,7 @@ describe('User get update delete posts', function(){
                     content: 'updateContent'
                 },
                 userId: '5c9a1c4e1452f12db91e1d12'
-            }
+            };
 
             const res = {
                 statusCode: 500,
@@ -274,7 +274,7 @@ describe('User get update delete posts', function(){
                 json: function(data){
                     this.message = data;
                 }
-            }
+            };
 
             const user = new User({
                 email: 'test@test.com',

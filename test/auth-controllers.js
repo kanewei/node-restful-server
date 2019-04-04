@@ -47,7 +47,7 @@ describe('User authentication', () => {
                 json: function(message){
                     this.message = message;
                 }
-            }
+            };
     
             sinon.stub(validator, 'validate').returns([]);
     
@@ -81,7 +81,7 @@ describe('User authentication', () => {
                     password: '123123',
                     name: '' 
                 }
-            }  
+            };
     
             authController.signup(req, {}, () => {}).then(result => {
                 expect(result).to.be.an('error');
@@ -99,7 +99,7 @@ describe('User authentication', () => {
                 body: {
                     email: 'failtest@test.com'
                 }
-            }
+            };
     
             authController.login(req, {}, () => {}).then(result => {
                 expect(result).to.be.an('error');
@@ -114,8 +114,7 @@ describe('User authentication', () => {
                     email: 'test@test.com',
                     password: '456456'
                 }
-            
-            }
+            };
             
             sinon.stub(validator, 'passwordValidate').returns(false);
 
@@ -136,7 +135,7 @@ describe('User authentication', () => {
                     email: 'test@test.com',
                     password: '123123'
                 }
-            }
+            };
 
             const res = {
                 statusCode: 500,
@@ -148,7 +147,7 @@ describe('User authentication', () => {
                 json: function(message){
                     this.message = message;
                 }
-            }
+            };
 
             sinon.stub(validator, 'passwordValidate').returns(true);
 
