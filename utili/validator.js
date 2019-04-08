@@ -1,9 +1,9 @@
-const { validationResult } = require('express-validator/check');
+const check = require('express-validator/check');
 const bcrypt = require('bcryptjs');
 
 exports.validate = (req) => {
     //console.log(req)
-    let errors = validationResult(req);
+    let errors = check.validationResult(req);
     if(!errors.isEmpty()){
         return errors.array();
     }
